@@ -2,6 +2,31 @@
 
 A full-stack MERN application for managing student internships, faculty evaluations, and administrative oversight.
 
+## ✨ Key Features
+
+### 👨‍💼 Admin Panel
+- **Internship Management** - View all student internships
+- **Student Assignment** - Assign internships to faculty reviewers
+- **Faculty Management** - Create and manage faculty members
+- **Student Management** - Create and manage student accounts
+- **Progress Tracking** - Monitor evaluation status and assignments
+
+### 👨‍🏫 Faculty Dashboard
+- **Assigned Internships** - View internships assigned for review
+- **Detailed Review** - Access student info, certificates, and recommendations
+- **Evaluation System** - Rate internships (1-5 stars) and add remarks
+- **Status Verification** - Accept or Reject internship submissions
+- **Performance Stats** - Dashboard showing review statistics
+
+### 🎓 Student Features
+- **Internship Submission** - Submit internship details with documents
+- **Certificate Upload** - Upload internship certificates
+- **LOR Attachment** - Add Letters of Recommendation
+- **My Internships** - View submitted internships and their status
+- **Evaluation Viewing** - See faculty evaluations once completed
+
+---
+
 ## 🛠 Tech Stack
 
 - **Frontend:** React.js + Tailwind CSS + Vite
@@ -32,6 +57,8 @@ iems/
 │   │   └── services/   # API service
 │   └── ...
 └── README.md
+└── FEATURES_GUIDE.md       # Detailed feature documentation
+└── WORKFLOW_DIAGRAMS.md    # System flow diagrams
 ```
 
 ## 🚀 Getting Started

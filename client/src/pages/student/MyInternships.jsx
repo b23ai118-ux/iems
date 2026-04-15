@@ -74,7 +74,7 @@ const MyInternships = () => {
             <span className="text-surface-600">{'★'.repeat(5 - row.evaluation.rating)}</span>
           </span>
         ) : (
-          <span className="text-surface-500 text-sm">—</span>
+          <span className="text-surface-700 text-sm">—</span>
         ),
     },
     {
@@ -84,7 +84,7 @@ const MyInternships = () => {
       render: (row) => (
         <button
           onClick={() => setDetailModal(row)}
-          className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-400 hover:text-primary-400 transition-colors"
+          className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-700 hover:text-primary-400 transition-colors"
           title="View Details"
         >
           <HiEye className="w-4 h-4" />
@@ -117,7 +117,7 @@ const MyInternships = () => {
                       : status === 'Rejected'
                       ? 'bg-red-500/15 text-red-400 border border-red-500/30'
                       : 'bg-primary-500/15 text-primary-400 border border-primary-500/30'
-                    : 'text-surface-400 hover:text-white hover:bg-white/5 border border-transparent'
+                    : 'text-surface-700 hover:text-surface-900 hover:bg-white/5 border border-transparent'
                 }`}
             >
               {status}
@@ -148,27 +148,27 @@ const MyInternships = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-xs text-surface-400 mb-1">Company</p>
-                <p className="text-white font-medium">{detailModal.companyName}</p>
+                <p className="text-xs text-surface-700 mb-1">Company</p>
+                <p className="text-surface-900 font-medium">{detailModal.companyName}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Type</p>
+                <p className="text-xs text-surface-700 mb-1">Type</p>
                 <StatusBadge status={detailModal.paid ? 'Paid' : 'Unpaid'} />
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Start Date</p>
-                <p className="text-white">{new Date(detailModal.startDate).toLocaleDateString()}</p>
+                <p className="text-xs text-surface-700 mb-1">Start Date</p>
+                <p className="text-surface-900">{new Date(detailModal.startDate).toLocaleDateString()}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">End Date</p>
-                <p className="text-white">{new Date(detailModal.endDate).toLocaleDateString()}</p>
+                <p className="text-xs text-surface-700 mb-1">End Date</p>
+                <p className="text-surface-900">{new Date(detailModal.endDate).toLocaleDateString()}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Duration</p>
-                <p className="text-white">{detailModal.durationDays} days</p>
+                <p className="text-xs text-surface-700 mb-1">Duration</p>
+                <p className="text-surface-900">{detailModal.durationDays} days</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Status</p>
+                <p className="text-xs text-surface-700 mb-1">Status</p>
                 <StatusBadge status={detailModal.status} />
               </div>
             </div>
@@ -176,9 +176,9 @@ const MyInternships = () => {
             {/* Faculty info */}
             {detailModal.facultyId && (
               <div>
-                <p className="text-xs text-surface-400 mb-1">Assigned Faculty</p>
-                <p className="text-white font-medium">{detailModal.facultyId.name}</p>
-                <p className="text-xs text-surface-400">{detailModal.facultyId.email}</p>
+                <p className="text-xs text-surface-700 mb-1">Assigned Faculty</p>
+                <p className="text-surface-900 font-medium">{detailModal.facultyId.name}</p>
+                <p className="text-xs text-surface-700">{detailModal.facultyId.email}</p>
               </div>
             )}
 
@@ -221,14 +221,14 @@ const MyInternships = () => {
                   <span className="text-2xl text-surface-600">
                     {'★'.repeat(5 - detailModal.evaluation.rating)}
                   </span>
-                  <span className="text-sm text-surface-400 ml-2">
+                  <span className="text-sm text-surface-700 ml-2">
                     ({detailModal.evaluation.rating}/5)
                   </span>
                 </div>
                 {detailModal.evaluation.remarks && (
                   <div className="mt-3 p-3 rounded-lg bg-surface-200">
-                    <p className="text-xs text-surface-400 mb-1">Remarks</p>
-                    <p className="text-sm text-surface-200 leading-relaxed">
+                    <p className="text-xs text-surface-700 mb-1">Remarks</p>
+                    <p className="text-sm text-surface-700 leading-relaxed">
                       {detailModal.evaluation.remarks}
                     </p>
                   </div>

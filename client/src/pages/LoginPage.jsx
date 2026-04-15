@@ -128,7 +128,7 @@ const LoginPage = () => {
                            hover:bg-primary-500/5 transition-all duration-200 group"
               >
                 <p className="text-xs font-semibold text-surface-700 group-hover:text-primary-400">{cred.role}</p>
-                <p className="text-[10px] text-surface-500 mt-0.5 truncate">{cred.email}</p>
+                <p className="text-[10px] text-surface-700 mt-0.5 truncate">{cred.email}</p>
               </button>
             ))}
           </div>

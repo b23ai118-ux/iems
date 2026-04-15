@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         <div className="flex items-center justify-between px-6 py-5 border-b border-surface-300">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-              <HiChartBar className="w-6 h-6 text-white" />
+              <HiChartBar className="w-6 h-6 text-surface-900" />
             </div>
             <div>
               <h1 className="text-lg font-bold text-surface-900">IEMS</h1>
@@ -100,12 +100,12 @@ const Sidebar = ({ isOpen, onClose }) => {
         {/* User info */}
         <div className="px-4 py-4 border-t border-white/10">
           <div className="flex items-center gap-3 px-2">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-surface-900 font-bold text-sm">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-white truncate">{user?.name}</p>
-              <p className="text-xs text-surface-400 truncate">{user?.email}</p>
+              <p className="text-sm font-medium text-surface-900 truncate">{user?.name}</p>
+              <p className="text-xs text-surface-700 truncate">{user?.email}</p>
             </div>
           </div>
         </div>

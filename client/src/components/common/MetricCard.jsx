@@ -93,8 +93,8 @@ const MetricCard = ({ title, value, icon: Icon, color = 'primary', delay = 0 }) 
 
       <div className="relative flex items-start justify-between">
         <div className="space-y-2">
-          <p className="text-sm font-medium text-surface-600">{title}</p>
-          <p className="text-3xl font-bold text-white">{displayValue}</p>
+          <p className="text-sm font-medium text-surface-700">{title}</p>
+          <p className="text-3xl font-bold text-surface-900">{displayValue}</p>
         </div>
         {Icon && (
           <div className={`p-3 rounded-xl ${c.icon}`}>

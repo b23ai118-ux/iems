@@ -52,7 +52,7 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
       {searchable && (
         <div className="p-4 border-b border-white/10">
           <div className="relative max-w-sm">
-            <HiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-400 w-5 h-5" />
+            <HiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-700 w-5 h-5" />
             <input
               type="text"
               placeholder="Search..."
@@ -77,7 +77,7 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
                   key={col.key}
                   onClick={() => col.sortable !== false && handleSort(col.key)}
                   className={`table-header ${
-                    col.sortable !== false ? 'cursor-pointer hover:text-white select-none' : ''
+                    col.sortable !== false ? 'cursor-pointer hover:text-surface-900 select-none' : ''
                   }`}
                 >
                   <div className="flex items-center gap-1">
@@ -93,7 +93,7 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
           <tbody className="divide-y divide-white/5">
             {paginatedData.length === 0 ? (
               <tr>
-                <td colSpan={columns.length} className="px-4 py-12 text-center text-surface-400">
+                <td colSpan={columns.length} className="px-4 py-12 text-center text-surface-700">
                   No data found
                 </td>
               </tr>
@@ -122,7 +122,7 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-between px-4 py-3 border-t border-white/10">
-          <p className="text-sm text-surface-400">
+          <p className="text-sm text-surface-700">
             Showing {(currentPage - 1) * pageSize + 1} to{' '}
             {Math.min(currentPage * pageSize, sortedData.length)} of {sortedData.length}
           </p>
@@ -130,8 +130,8 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="p-2 rounded-lg bg-surface-800 border border-surface-700 text-surface-300
-                         hover:bg-surface-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              className="p-2 rounded-lg bg-surface-200 border border-surface-300 text-surface-700
+                         hover:bg-surface-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               <HiChevronLeft className="w-4 h-4" />
             </button>
@@ -153,7 +153,7 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
                   className={`w-8 h-8 rounded-lg text-sm font-medium transition-all
                     ${
                       currentPage === page
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-primary-600 text-surface-900'
                         : 'bg-surface-200 text-surface-700 hover:bg-surface-300'
                     }`}
                 >
@@ -164,8 +164,8 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="p-2 rounded-lg bg-surface-800 border border-surface-700 text-surface-300
-                         hover:bg-surface-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              className="p-2 rounded-lg bg-surface-200 border border-surface-300 text-surface-700
+                         hover:bg-surface-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               <HiChevronRight className="w-4 h-4" />
             </button>

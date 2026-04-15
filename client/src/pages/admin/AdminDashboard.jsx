@@ -80,7 +80,7 @@ const AdminDashboard = () => {
             <HiClock className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm text-surface-600">Pending Review</p>
+            <p className="text-sm text-surface-700">Pending Review</p>
             <p className="text-2xl font-bold text-surface-900">{stats?.pendingInternships || 0}</p>
           </div>
         </div>
@@ -89,7 +89,7 @@ const AdminDashboard = () => {
             <HiCheckCircle className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm text-surface-600">Accepted</p>
+            <p className="text-sm text-surface-700">Accepted</p>
             <p className="text-2xl font-bold text-surface-900">{stats?.acceptedInternships || 0}</p>
           </div>
         </div>
@@ -98,7 +98,7 @@ const AdminDashboard = () => {
             <HiXCircle className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm text-surface-600">Rejected</p>
+            <p className="text-sm text-surface-700">Rejected</p>
             <p className="text-2xl font-bold text-surface-900">{stats?.rejectedInternships || 0}</p>
           </div>
         </div>

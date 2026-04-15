@@ -97,7 +97,7 @@ const InternshipReview = () => {
             <span className="text-surface-600">{'★'.repeat(5 - row.evaluation.rating)}</span>
           </span>
         ) : (
-          <span className="text-surface-500 text-sm">Not rated</span>
+          <span className="text-surface-700 text-sm">Not rated</span>
         ),
     },
     {
@@ -108,7 +108,7 @@ const InternshipReview = () => {
         <div className="flex items-center gap-1">
           <button
             onClick={() => setDetailModal(row)}
-            className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-400 hover:text-primary-400 transition-colors"
+            className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-700 hover:text-primary-400 transition-colors"
             title="View Details"
           >
             <HiEye className="w-4 h-4" />
@@ -117,14 +117,14 @@ const InternshipReview = () => {
             <>
               <button
                 onClick={() => handleStatusUpdate(row._id, 'Accepted')}
-                className="p-2 rounded-lg hover:bg-emerald-500/10 text-surface-400 hover:text-emerald-400 transition-colors"
+                className="p-2 rounded-lg hover:bg-emerald-500/10 text-surface-700 hover:text-emerald-400 transition-colors"
                 title="Accept"
               >
                 <HiCheckCircle className="w-4 h-4" />
               </button>
               <button
                 onClick={() => handleStatusUpdate(row._id, 'Rejected')}
-                className="p-2 rounded-lg hover:bg-red-500/10 text-surface-400 hover:text-red-400 transition-colors"
+                className="p-2 rounded-lg hover:bg-red-500/10 text-surface-700 hover:text-red-400 transition-colors"
                 title="Reject"
               >
                 <HiXCircle className="w-4 h-4" />
@@ -139,7 +139,7 @@ const InternshipReview = () => {
                 remarks: row.evaluation?.remarks || '',
               });
             }}
-            className="p-2 rounded-lg hover:bg-amber-500/10 text-surface-400 hover:text-amber-400 transition-colors"
+            className="p-2 rounded-lg hover:bg-amber-500/10 text-surface-700 hover:text-amber-400 transition-colors"
             title="Evaluate"
           >
             <HiStar className="w-4 h-4" />
@@ -173,29 +173,29 @@ const InternshipReview = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-xs text-surface-400 mb-1">Student</p>
-                <p className="text-white font-medium">{detailModal.studentId?.name}</p>
-                <p className="text-xs text-surface-400">{detailModal.studentId?.email}</p>
+                <p className="text-xs text-surface-700 mb-1">Student</p>
+                <p className="text-surface-900 font-medium">{detailModal.studentId?.name}</p>
+                <p className="text-xs text-surface-700">{detailModal.studentId?.email}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Company</p>
-                <p className="text-white font-medium">{detailModal.companyName}</p>
+                <p className="text-xs text-surface-700 mb-1">Company</p>
+                <p className="text-surface-900 font-medium">{detailModal.companyName}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Type</p>
+                <p className="text-xs text-surface-700 mb-1">Type</p>
                 <StatusBadge status={detailModal.paid ? 'Paid' : 'Unpaid'} />
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Status</p>
+                <p className="text-xs text-surface-700 mb-1">Status</p>
                 <StatusBadge status={detailModal.status} />
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Start Date</p>
-                <p className="text-white">{new Date(detailModal.startDate).toLocaleDateString()}</p>
+                <p className="text-xs text-surface-700 mb-1">Start Date</p>
+                <p className="text-surface-900">{new Date(detailModal.startDate).toLocaleDateString()}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">End Date</p>
-                <p className="text-white">{new Date(detailModal.endDate).toLocaleDateString()}</p>
+                <p className="text-xs text-surface-700 mb-1">End Date</p>
+                <p className="text-surface-900">{new Date(detailModal.endDate).toLocaleDateString()}</p>
               </div>
             </div>
 
@@ -225,18 +225,18 @@ const InternshipReview = () => {
 
             {detailModal.evaluation?.rating && (
               <div className="p-4 rounded-xl bg-surface-100 border border-surface-300">
-                <p className="text-xs text-surface-400 mb-2">Current Evaluation</p>
+                <p className="text-xs text-surface-700 mb-2">Current Evaluation</p>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-lg font-bold text-amber-400">
                     {'★'.repeat(detailModal.evaluation.rating)}
                   </span>
-                  <span className="text-surface-500">
+                  <span className="text-surface-700">
                     {'★'.repeat(5 - detailModal.evaluation.rating)}
                   </span>
-                  <span className="text-sm text-surface-400 ml-2">({detailModal.evaluation.rating}/5)</span>
+                  <span className="text-sm text-surface-700 ml-2">({detailModal.evaluation.rating}/5)</span>
                 </div>
                 {detailModal.evaluation.remarks && (
-                  <p className="text-sm text-surface-300 mt-2">{detailModal.evaluation.remarks}</p>
+                  <p className="text-sm text-surface-700 mt-2">{detailModal.evaluation.remarks}</p>
                 )}
               </div>
             )}
@@ -269,7 +269,7 @@ const InternshipReview = () => {
               </div>
             )}
             {detailModal.status !== 'Pending' && (
-              <div className="p-3 rounded-lg bg-surface-700/50 text-center text-sm text-surface-300">
+              <div className="p-3 rounded-lg bg-surface-300 text-center text-sm text-surface-900">
                 This internship has already been {detailModal.status.toLowerCase()}
               </div>
             )}
@@ -285,9 +285,9 @@ const InternshipReview = () => {
       >
         {evalModal && (
           <form onSubmit={handleEvaluate} className="space-y-4">
-            <p className="text-sm text-surface-300">
-              Evaluate <span className="text-white font-medium">{evalModal.studentId?.name}</span>'s
-              internship at <span className="text-white font-medium">{evalModal.companyName}</span>
+            <p className="text-sm text-surface-700">
+              Evaluate <span className="text-surface-900 font-medium">{evalModal.studentId?.name}</span>'s
+              internship at <span className="text-surface-900 font-medium">{evalModal.companyName}</span>
             </p>
 
             <div>
@@ -305,7 +305,7 @@ const InternshipReview = () => {
                     ★
                   </button>
                 ))}
-                <span className="text-sm text-surface-400 ml-2">({evalForm.rating}/5)</span>
+                <span className="text-sm text-surface-700 ml-2">({evalForm.rating}/5)</span>
               </div>
             </div>
 

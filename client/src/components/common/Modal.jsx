@@ -37,10 +37,10 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
+          <h3 className="text-lg font-semibold text-surface-900">{title}</h3>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg hover:bg-white/10 text-surface-400 hover:text-white transition-colors"
+            className="p-2 rounded-lg hover:bg-white/10 text-surface-600 hover:text-surface-900 transition-colors"
           >
             <HiX className="w-5 h-5" />
           </button>

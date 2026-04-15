@@ -8,7 +8,7 @@ const StatusBadge = ({ status }) => {
   };
 
   return (
-    <span className={classMap[status] || 'badge bg-surface-700 text-surface-300'}>
+    <span className={classMap[status] || 'badge bg-surface-300 text-surface-900'}>
       {status}
     </span>
   );

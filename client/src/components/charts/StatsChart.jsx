@@ -8,7 +8,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     <div className="bg-white border border-surface-300 rounded-xl px-4 py-3 shadow-sm">
       <p className="text-sm font-medium text-surface-900 mb-1">{label}</p>
       {payload.map((entry, i) => (
-        <p key={i} className="text-xs text-surface-600">
+        <p key={i} className="text-xs text-surface-700">
           <span style={{ color: entry.color }}>●</span> {entry.name}: {entry.value}
         </p>
       ))}
@@ -19,7 +19,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 export const StatsBarChart = ({ data, dataKey = 'value', nameKey = 'name', title }) => {
   return (
     <div className="glass-card">
-      {title && <h3 className="text-lg font-semibold text-white mb-4">{title}</h3>}
+      {title && <h3 className="text-lg font-semibold text-surface-900 mb-4">{title}</h3>}
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />

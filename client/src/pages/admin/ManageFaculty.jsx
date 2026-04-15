@@ -93,14 +93,14 @@ const ManageFaculty = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => openEdit(row)}
-            className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-400 hover:text-primary-400 transition-colors"
+            className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-700 hover:text-primary-400 transition-colors"
             title="Edit"
           >
             <HiPencil className="w-4 h-4" />
           </button>
           <button
             onClick={() => handleDelete(row._id)}
-            className="p-2 rounded-lg hover:bg-red-500/10 text-surface-400 hover:text-red-400 transition-colors"
+            className="p-2 rounded-lg hover:bg-red-500/10 text-surface-700 hover:text-red-400 transition-colors"
             title="Delete"
           >
             <HiTrash className="w-4 h-4" />
@@ -158,7 +158,7 @@ const ManageFaculty = () => {
           </div>
           <div>
             <label className="input-label">
-              Password {editing && <span className="text-surface-500">(leave blank to keep)</span>}
+              Password {editing && <span className="text-surface-700">(leave blank to keep)</span>}
             </label>
             <input
               type="password"

@@ -91,7 +91,7 @@ const InternshipList = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setDetailModal(row)}
-            className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-400 hover:text-primary-400 transition-colors"
+            className="p-2 rounded-lg hover:bg-primary-500/10 text-surface-700 hover:text-primary-400 transition-colors"
             title="View Details"
           >
             <HiEye className="w-4 h-4" />
@@ -101,7 +101,7 @@ const InternshipList = () => {
               setAssignModal(row);
               setSelectedFaculty(row.facultyId?._id || '');
             }}
-            className="p-2 rounded-lg hover:bg-emerald-500/10 text-surface-400 hover:text-emerald-400 transition-colors"
+            className="p-2 rounded-lg hover:bg-emerald-500/10 text-surface-700 hover:text-emerald-400 transition-colors"
             title="Assign Faculty"
           >
             <HiUserAdd className="w-4 h-4" />
@@ -125,19 +125,19 @@ const InternshipList = () => {
           {/* Quick Info Banner */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div className="glass-card p-4">
-              <p className="text-xs text-surface-400 mb-1">Pending Assignment</p>
+              <p className="text-xs text-surface-700 mb-1">Pending Assignment</p>
               <p className="text-2xl font-bold text-primary-400">
                 {internships.filter(i => !i.facultyId).length}
               </p>
             </div>
             <div className="glass-card p-4">
-              <p className="text-xs text-surface-400 mb-1">Assigned</p>
+              <p className="text-xs text-surface-700 mb-1">Assigned</p>
               <p className="text-2xl font-bold text-emerald-400">
                 {internships.filter(i => i.facultyId).length}
               </p>
             </div>
             <div className="glass-card p-4">
-              <p className="text-xs text-surface-400 mb-1">Evaluated</p>
+              <p className="text-xs text-surface-700 mb-1">Evaluated</p>
               <p className="text-2xl font-bold text-amber-400">
                 {internships.filter(i => i.evaluation?.rating).length}
               </p>
@@ -159,41 +159,41 @@ const InternshipList = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-xs text-surface-400 mb-1">Student</p>
-                <p className="text-white font-medium">{detailModal.studentId?.name}</p>
+                <p className="text-xs text-surface-700 mb-1">Student</p>
+                <p className="text-surface-900 font-medium">{detailModal.studentId?.name}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Company</p>
-                <p className="text-white font-medium">{detailModal.companyName}</p>
+                <p className="text-xs text-surface-700 mb-1">Company</p>
+                <p className="text-surface-900 font-medium">{detailModal.companyName}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Type</p>
+                <p className="text-xs text-surface-700 mb-1">Type</p>
                 <StatusBadge status={detailModal.paid ? 'Paid' : 'Unpaid'} />
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Status</p>
+                <p className="text-xs text-surface-700 mb-1">Status</p>
                 <StatusBadge status={detailModal.status} />
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Start Date</p>
-                <p className="text-white">{new Date(detailModal.startDate).toLocaleDateString()}</p>
+                <p className="text-xs text-surface-700 mb-1">Start Date</p>
+                <p className="text-surface-900">{new Date(detailModal.startDate).toLocaleDateString()}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">End Date</p>
-                <p className="text-white">{new Date(detailModal.endDate).toLocaleDateString()}</p>
+                <p className="text-xs text-surface-700 mb-1">End Date</p>
+                <p className="text-surface-900">{new Date(detailModal.endDate).toLocaleDateString()}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Faculty Assigned</p>
-                <p className="text-white">{detailModal.facultyId?.name || 'Not assigned'}</p>
+                <p className="text-xs text-surface-700 mb-1">Faculty Assigned</p>
+                <p className="text-surface-900">{detailModal.facultyId?.name || 'Not assigned'}</p>
               </div>
               <div>
-                <p className="text-xs text-surface-400 mb-1">Duration</p>
-                <p className="text-white">{detailModal.durationDays} days</p>
+                <p className="text-xs text-surface-700 mb-1">Duration</p>
+                <p className="text-surface-900">{detailModal.durationDays} days</p>
               </div>
             </div>
             {detailModal.certificate && (
               <div>
-                <p className="text-xs text-surface-400 mb-1">Certificate</p>
+                <p className="text-xs text-surface-700 mb-1">Certificate</p>
                 <a href={detailModal.certificate} target="_blank" rel="noreferrer" className="text-primary-400 hover:text-primary-300 text-sm">
                   View Certificate →
                 </a>
@@ -201,7 +201,7 @@ const InternshipList = () => {
             )}
             {detailModal.lor && (
               <div>
-                <p className="text-xs text-surface-400 mb-1">LOR</p>
+                <p className="text-xs text-surface-700 mb-1">LOR</p>
                 <a href={detailModal.lor} target="_blank" rel="noreferrer" className="text-primary-400 hover:text-primary-300 text-sm">
                   View LOR →
                 </a>
@@ -209,12 +209,12 @@ const InternshipList = () => {
             )}
             {detailModal.evaluation?.rating && (
               <div className="p-4 rounded-xl bg-surface-100 border border-surface-300">
-                <p className="text-xs text-surface-400 mb-2">Evaluation</p>
+                <p className="text-xs text-surface-700 mb-2">Evaluation</p>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-lg font-bold text-amber-400">{'★'.repeat(detailModal.evaluation.rating)}</span>
-                  <span className="text-sm text-surface-400">{'★'.repeat(5 - detailModal.evaluation.rating)}</span>
+                  <span className="text-sm text-surface-700">{'★'.repeat(5 - detailModal.evaluation.rating)}</span>
                 </div>
-                <p className="text-sm text-surface-300">{detailModal.evaluation.remarks}</p>
+                <p className="text-sm text-surface-700">{detailModal.evaluation.remarks}</p>
               </div>
             )}
 

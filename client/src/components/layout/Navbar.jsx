@@ -20,15 +20,15 @@ const Navbar = ({ onMenuClick }) => {
         <div className="flex items-center gap-4">
           <button
             onClick={onMenuClick}
-            className="lg:hidden p-2 rounded-lg hover:bg-white/10 text-surface-400 hover:text-white transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 text-surface-600 hover:text-surface-900 transition-colors"
           >
             <HiMenuAlt2 className="w-6 h-6" />
           </button>
           <div>
-            <h2 className="text-sm font-semibold text-white">
+            <h2 className="text-sm font-semibold text-surface-900">
               Welcome back, <span className="gradient-text">{user?.name}</span>
             </h2>
-            <p className="text-xs text-surface-400">
+            <p className="text-xs text-surface-700">
               {new Date().toLocaleDateString('en-US', {
                 weekday: 'long',
                 year: 'numeric',
@@ -41,14 +41,14 @@ const Navbar = ({ onMenuClick }) => {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <button className="p-2.5 rounded-xl hover:bg-white/10 text-surface-400 hover:text-white transition-colors relative">
+          <button className="p-2.5 rounded-xl hover:bg-white/10 text-surface-600 hover:text-surface-900 transition-colors relative">
             <HiBell className="w-5 h-5" />
             <span className="absolute top-2 right-2 w-2 h-2 bg-primary-500 rounded-full" />
           </button>
 
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-red-500/10 text-surface-400
+            className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-red-500/10 text-surface-700
                        hover:text-red-400 transition-all duration-200 text-sm font-medium"
           >
             <HiLogout className="w-5 h-5" />

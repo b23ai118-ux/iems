@@ -12,7 +12,7 @@
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: #faf8f3;
-    color: #3a3633;
+    color: #2a2622;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -75,7 +75,7 @@
 
   .input-label {
     @apply block text-sm font-medium mb-1;
-    color: #6b6552;
+    color: #4a4540;
   }
 
   /* 🔹 NAVBAR / SIDEBAR */
@@ -86,11 +86,13 @@
 
   .sidebar-link {
     @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm;
+    color: #4a4540;
     transition: all 0.2s ease;
   }
 
   .sidebar-link:hover {
     @apply text-surface-900;
+    color: #2a2622;
     background-color: rgba(217,119,6,0.08);
   }
 
@@ -110,12 +112,12 @@
 
   .table-header {
     @apply text-xs font-semibold uppercase;
-    color: #8b7d5d;
+    color: #5a5448;
   }
 
   .table-cell {
     @apply text-sm;
-    color: #4a4540;
+    color: #2a2622;
   }
 
   /* 🔹 BADGES */
@@ -180,11 +182,11 @@
 
   .page-title {
     @apply text-2xl font-semibold;
-    color: #3a3633;
+    color: #1a1a18;
   }
 
   .page-subtitle {
-    color: #8b7d5d;
+    color: #5a5448;
   }
 
   /* 🔹 MODAL */

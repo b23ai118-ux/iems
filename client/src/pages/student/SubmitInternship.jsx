@@ -64,16 +64,16 @@ const SubmitInternship = () => {
         {file ? (
           <div className="text-center">
             <HiDocumentAdd className="w-8 h-8 text-primary-400 mx-auto mb-2" />
-            <p className="text-sm text-white font-medium truncate max-w-[200px]">{file.name}</p>
-            <p className="text-xs text-surface-400 mt-1">
+            <p className="text-sm text-surface-900 font-medium truncate max-w-[200px]">{file.name}</p>
+            <p className="text-xs text-surface-700 mt-1">
               {(file.size / 1024).toFixed(1)} KB
             </p>
           </div>
         ) : (
           <div className="text-center">
-            <HiUpload className="w-8 h-8 text-surface-400 mx-auto mb-2" />
-            <p className="text-sm text-surface-300">Click to upload</p>
-            <p className="text-xs text-surface-500 mt-1">PDF, PNG, JPG (Max 5MB)</p>
+            <HiUpload className="w-8 h-8 text-surface-700 mx-auto mb-2" />
+            <p className="text-sm text-surface-700">Click to upload</p>
+            <p className="text-xs text-surface-700 mt-1">PDF, PNG, JPG (Max 5MB)</p>
           </div>
         )}
         <input
@@ -101,7 +101,7 @@ const SubmitInternship = () => {
             <div>
               <label className="input-label">Company Name *</label>
               <div className="relative">
-                <HiOfficeBuilding className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 w-5 h-5" />
+                <HiOfficeBuilding className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-700 w-5 h-5" />
                 <input
                   type="text"
                   className="input-field !pl-11"
@@ -149,7 +149,7 @@ const SubmitInternship = () => {
               <div>
                 <label className="input-label">Start Date *</label>
                 <div className="relative">
-                  <HiCalendar className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 w-5 h-5" />
+                  <HiCalendar className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-700 w-5 h-5" />
                   <input
                     type="date"
                     className="input-field !pl-11"
@@ -161,7 +161,7 @@ const SubmitInternship = () => {
               <div>
                 <label className="input-label">End Date *</label>
                 <div className="relative">
-                  <HiCalendar className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 w-5 h-5" />
+                  <HiCalendar className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-700 w-5 h-5" />
                   <input
                     type="date"
                     className="input-field !pl-11"
