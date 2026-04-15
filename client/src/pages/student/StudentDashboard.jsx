@@ -69,8 +69,8 @@ const StudentDashboard = () => {
 
       {/* Tips Card */}
       <div className="glass-card">
-        <h3 className="text-lg font-semibold text-white mb-3">💡 Quick Tips</h3>
-        <ul className="space-y-2 text-sm text-surface-300">
+        <h3 className="text-lg font-semibold text-surface-900 mb-3">💡 Quick Tips</h3>
+        <ul className="space-y-2 text-sm text-surface-700">
           <li className="flex items-start gap-2">
             <span className="text-primary-400 mt-0.5">•</span>
             Submit your internship details along with your certificate and LOR for faster review.
