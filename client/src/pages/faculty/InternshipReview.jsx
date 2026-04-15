@@ -49,7 +49,7 @@ const InternshipReview = () => {
     setSubmitting(true);
     try {
       await api.put(`/api/faculty/internships/${evalModal._id}/evaluate`, evalForm);
-      toast.success('Evaluation submitted');
+      toast.success('Evaluation submitted successfully');
       setEvalModal(null);
       setEvalForm({ rating: 5, remarks: '' });
       fetchInternships();
@@ -224,7 +224,7 @@ const InternshipReview = () => {
             </div>
 
             {detailModal.evaluation?.rating && (
-              <div className="p-4 rounded-xl bg-surface-800/50 border border-surface-700">
+              <div className="p-4 rounded-xl bg-surface-100 border border-surface-300">
                 <p className="text-xs text-surface-400 mb-2">Current Evaluation</p>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-lg font-bold text-amber-400">
@@ -241,6 +241,16 @@ const InternshipReview = () => {
               </div>
             )}
 
+            {/* Workflow Steps */}
+            <div className="p-4 rounded-xl bg-primary-500/10 border border-primary-400/30">
+              <p className="text-xs text-primary-300 font-medium mb-2">REVIEW WORKFLOW:</p>
+              <ol className="text-xs text-primary-200 space-y-1 ml-2">
+                <li>1. Review all internship details and files</li>
+                <li>2. Click the ⭐ button to add rating and remarks</li>
+                <li>3. Use ✓/✗ buttons to Accept or Reject</li>
+              </ol>
+            </div>
+
             {/* Action buttons */}
             {detailModal.status === 'Pending' && (
               <div className="flex gap-3 pt-2">
@@ -256,6 +266,11 @@ const InternshipReview = () => {
                 >
                   <HiXCircle className="w-5 h-5" /> Reject
                 </button>
+              </div>
+            )}
+            {detailModal.status !== 'Pending' && (
+              <div className="p-3 rounded-lg bg-surface-700/50 text-center text-sm text-surface-300">
+                This internship has already been {detailModal.status.toLowerCase()}
               </div>
             )}
           </div>

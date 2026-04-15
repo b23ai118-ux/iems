@@ -40,32 +40,32 @@ const Sidebar = ({ isOpen, onClose }) => {
       {/* Mobile overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
           onClick={onClose}
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-full w-64 bg-surface-900/95 backdrop-blur-xl border-r border-white/10
+        className={`fixed top-0 left-0 z-50 h-full w-64 bg-surface-100/95 backdrop-blur-xl border-r border-surface-300
           flex flex-col transition-transform duration-300 ease-out
           lg:translate-x-0 lg:static lg:z-auto
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         {/* Logo */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-surface-300">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
               <HiChartBar className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-white">IEMS</h1>
-              <p className="text-[10px] text-surface-400 uppercase tracking-widest">Management</p>
+              <h1 className="text-lg font-bold text-surface-900">IEMS</h1>
+              <p className="text-[10px] text-surface-600 uppercase tracking-widest">Management</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="lg:hidden p-1.5 rounded-lg hover:bg-white/10 text-surface-400"
+            className="lg:hidden p-1.5 rounded-lg hover:bg-surface-200 text-surface-600"
           >
             <HiX className="w-5 h-5" />
           </button>
@@ -73,7 +73,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
         {/* Role badge */}
         <div className="px-6 py-3">
-          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-surface-400 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-surface-600 uppercase tracking-wider">
             <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
             {user?.role} Panel
           </span>

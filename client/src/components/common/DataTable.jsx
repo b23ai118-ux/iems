@@ -154,7 +154,7 @@ const DataTable = ({ columns, data, searchable = true, pageSize = 10 }) => {
                     ${
                       currentPage === page
                         ? 'bg-primary-600 text-white'
-                        : 'bg-surface-800 text-surface-400 hover:bg-surface-700'
+                        : 'bg-surface-200 text-surface-700 hover:bg-surface-300'
                     }`}
                 >
                   {page}

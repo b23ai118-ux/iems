@@ -105,7 +105,7 @@ const evaluateInternship = async (req, res) => {
       rating: Number(rating),
       remarks: remarks || '',
     };
-    internship.status = 'Accepted';
+    // Keep existing status - don't auto-accept. Faculty must explicitly accept/reject
     await internship.save();
 
     const updated = await Internship.findById(internship._id)

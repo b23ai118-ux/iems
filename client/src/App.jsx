@@ -27,10 +27,10 @@ const App = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-surface-950 flex items-center justify-center">
+      <div className="min-h-screen bg-surface-50 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-14 h-14 border-4 border-primary-500/30 border-t-primary-500 rounded-full animate-spin" />
-          <p className="text-surface-400 font-medium">Loading IEMS...</p>
+          <p className="text-surface-600 font-medium">Loading IEMS...</p>
         </div>
       </div>
     );

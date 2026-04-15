@@ -30,7 +30,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-surface-950 bg-mesh flex items-center justify-center px-4">
+    <div className="min-h-screen bg-surface-50 flex items-center justify-center px-4">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-500/20 rounded-full blur-[100px]" />
@@ -41,10 +41,10 @@ const LoginPage = () => {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 mb-4 shadow-glow">
-            <HiChartBar className="w-8 h-8 text-white" />
+            <HiChartBar className="w-8 h-8 text-primary-500" />
           </div>
-          <h1 className="text-3xl font-bold text-white">Welcome Back</h1>
-          <p className="text-surface-400 mt-2">Sign in to your IEMS account</p>
+          <h1 className="text-3xl font-bold text-surface-900">Welcome Back</h1>
+          <p className="text-surface-600 mt-2">Sign in to your IEMS account</p>
         </div>
 
         {/* Form */}
@@ -53,7 +53,7 @@ const LoginPage = () => {
             <div>
               <label htmlFor="email" className="input-label">Email Address</label>
               <div className="relative">
-                <HiMail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 w-5 h-5" />
+                <HiMail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-600 w-5 h-5" />
                 <input
                   id="email"
                   type="email"
@@ -69,7 +69,7 @@ const LoginPage = () => {
             <div>
               <label htmlFor="password" className="input-label">Password</label>
               <div className="relative">
-                <HiLockClosed className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-400 w-5 h-5" />
+                <HiLockClosed className="absolute left-3.5 top-1/2 -translate-y-1/2 text-surface-600 w-5 h-5" />
                 <input
                   id="password"
                   type="password"
@@ -99,7 +99,7 @@ const LoginPage = () => {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-surface-400 text-sm">
+            <p className="text-surface-600 text-sm">
               Student?{' '}
               <Link to="/register" className="text-primary-400 hover:text-primary-300 font-medium transition-colors">
                 Create an account
@@ -110,7 +110,7 @@ const LoginPage = () => {
 
         {/* Demo credentials */}
         <div className="mt-6 glass-card !p-4">
-          <p className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Demo Credentials</p>
+          <p className="text-xs font-semibold text-surface-600 uppercase tracking-wider mb-3">Demo Credentials</p>
           <div className="grid grid-cols-3 gap-3">
             {[
               { role: 'Admin', email: 'admin@iems.com', pass: 'admin123' },
@@ -124,10 +124,10 @@ const LoginPage = () => {
                   setEmail(cred.email);
                   setPassword(cred.pass);
                 }}
-                className="text-center p-2.5 rounded-xl bg-surface-800/50 border border-surface-700 hover:border-primary-500/50
+                className="text-center p-2.5 rounded-xl bg-surface-200 border border-surface-300 hover:border-primary-500/50
                            hover:bg-primary-500/5 transition-all duration-200 group"
               >
-                <p className="text-xs font-semibold text-surface-300 group-hover:text-primary-400">{cred.role}</p>
+                <p className="text-xs font-semibold text-surface-700 group-hover:text-primary-400">{cred.role}</p>
                 <p className="text-[10px] text-surface-500 mt-0.5 truncate">{cred.email}</p>
               </button>
             ))}

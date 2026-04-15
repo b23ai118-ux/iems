@@ -123,7 +123,7 @@ const SubmitInternship = () => {
                     ${
                       form.paid
                         ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400'
-                        : 'bg-surface-800/50 border-surface-700 text-surface-400 hover:border-surface-600'
+                        : 'bg-surface-200 border-surface-300 text-surface-700 hover:border-surface-400'
                     }`}
                 >
                   <HiCurrencyDollar className="w-5 h-5" />
@@ -136,7 +136,7 @@ const SubmitInternship = () => {
                     ${
                       !form.paid
                         ? 'bg-amber-500/15 border-amber-500/30 text-amber-400'
-                        : 'bg-surface-800/50 border-surface-700 text-surface-400 hover:border-surface-600'
+                        : 'bg-surface-200 border-surface-300 text-surface-700 hover:border-surface-400'
                     }`}
                 >
                   Unpaid

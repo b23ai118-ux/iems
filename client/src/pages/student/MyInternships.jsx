@@ -226,7 +226,7 @@ const MyInternships = () => {
                   </span>
                 </div>
                 {detailModal.evaluation.remarks && (
-                  <div className="mt-3 p-3 rounded-lg bg-surface-800/50">
+                  <div className="mt-3 p-3 rounded-lg bg-surface-200">
                     <p className="text-xs text-surface-400 mb-1">Remarks</p>
                     <p className="text-sm text-surface-200 leading-relaxed">
                       {detailModal.evaluation.remarks}

@@ -121,7 +121,31 @@ const InternshipList = () => {
       {loading ? (
         <div className="glass-card animate-pulse h-64" />
       ) : (
-        <DataTable columns={columns} data={internships} />
+        <>
+          {/* Quick Info Banner */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="glass-card p-4">
+              <p className="text-xs text-surface-400 mb-1">Pending Assignment</p>
+              <p className="text-2xl font-bold text-primary-400">
+                {internships.filter(i => !i.facultyId).length}
+              </p>
+            </div>
+            <div className="glass-card p-4">
+              <p className="text-xs text-surface-400 mb-1">Assigned</p>
+              <p className="text-2xl font-bold text-emerald-400">
+                {internships.filter(i => i.facultyId).length}
+              </p>
+            </div>
+            <div className="glass-card p-4">
+              <p className="text-xs text-surface-400 mb-1">Evaluated</p>
+              <p className="text-2xl font-bold text-amber-400">
+                {internships.filter(i => i.evaluation?.rating).length}
+              </p>
+            </div>
+          </div>
+
+          <DataTable columns={columns} data={internships} />
+        </>
       )}
 
       {/* Detail Modal */}
@@ -184,7 +208,7 @@ const InternshipList = () => {
               </div>
             )}
             {detailModal.evaluation?.rating && (
-              <div className="p-4 rounded-xl bg-surface-800/50 border border-surface-700">
+              <div className="p-4 rounded-xl bg-surface-100 border border-surface-300">
                 <p className="text-xs text-surface-400 mb-2">Evaluation</p>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-lg font-bold text-amber-400">{'★'.repeat(detailModal.evaluation.rating)}</span>
@@ -193,6 +217,17 @@ const InternshipList = () => {
                 <p className="text-sm text-surface-300">{detailModal.evaluation.remarks}</p>
               </div>
             )}
+
+            {/* Admin Workflow Guide */}
+            <div className="p-4 rounded-xl bg-primary-500/10 border border-primary-400/30">
+              <p className="text-xs text-primary-300 font-medium mb-2">ADMIN WORKFLOW:</p>
+              <ol className="text-xs text-primary-200 space-y-1 ml-2">
+                <li>1. Review internship details</li>
+                <li>2. Click the 👤 button to assign faculty member</li>
+                <li>3. Faculty will review and evaluate</li>
+                <li>4. Track status and evaluation progress</li>
+              </ol>
+            </div>
           </div>
         )}
       </Modal>
@@ -204,13 +239,16 @@ const InternshipList = () => {
         title="Assign Faculty"
       >
         <div className="space-y-4">
-          <p className="text-sm text-surface-300">
-            Assign a faculty member to review{' '}
-            <span className="text-white font-medium">{assignModal?.companyName}</span> internship by{' '}
-            <span className="text-white font-medium">{assignModal?.studentId?.name}</span>
-          </p>
+          <div className="p-3 rounded-lg bg-accent-500/10 border border-accent-400/30">
+            <p className="text-xs text-accent-300 font-medium mb-2">INTERNSHIP DETAILS:</p>
+            <div className="text-sm text-accent-200 space-y-1">
+              <p><span className="text-accent-300 font-medium">Student:</span> {assignModal?.studentId?.name}</p>
+              <p><span className="text-accent-300 font-medium">Company:</span> {assignModal?.companyName}</p>
+              <p><span className="text-accent-300 font-medium">Current Faculty:</span> {assignModal?.facultyId?.name || 'Not assigned'}</p>
+            </div>
+          </div>
           <div>
-            <label className="input-label">Select Faculty</label>
+            <label className="input-label">Select Faculty to Assign</label>
             <select
               className="input-field"
               value={selectedFaculty}
@@ -226,7 +264,7 @@ const InternshipList = () => {
           </div>
           <div className="flex gap-3 pt-2">
             <button onClick={handleAssign} className="btn-primary flex-1">
-              Assign
+              Assign Faculty
             </button>
             <button onClick={() => setAssignModal(null)} className="btn-secondary">
               Cancel

@@ -18,6 +18,12 @@ const MetricCard = ({ title, value, icon: Icon, color = 'primary', delay = 0 }) 
       icon: 'text-accent-400 bg-accent-500/15',
       glow: 'shadow-accent-500/10',
     },
+    secondary: {
+      bg: 'from-secondary-500/20 to-secondary-600/10',
+      border: 'border-secondary-500/30',
+      icon: 'text-secondary-400 bg-secondary-500/15',
+      glow: 'shadow-secondary-500/10',
+    },
     emerald: {
       bg: 'from-emerald-500/20 to-emerald-600/10',
       border: 'border-emerald-500/30',
@@ -87,7 +93,7 @@ const MetricCard = ({ title, value, icon: Icon, color = 'primary', delay = 0 }) 
 
       <div className="relative flex items-start justify-between">
         <div className="space-y-2">
-          <p className="text-sm font-medium text-surface-400">{title}</p>
+          <p className="text-sm font-medium text-surface-600">{title}</p>
           <p className="text-3xl font-bold text-white">{displayValue}</p>
         </div>
         {Icon && (

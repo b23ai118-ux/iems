@@ -5,10 +5,10 @@ const COLORS = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'
 const CustomTooltip = ({ active, payload, label }) => {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-surface-800 border border-white/10 rounded-xl px-4 py-3 shadow-xl">
-      <p className="text-sm font-medium text-white mb-1">{label}</p>
+    <div className="bg-white border border-surface-300 rounded-xl px-4 py-3 shadow-sm">
+      <p className="text-sm font-medium text-surface-900 mb-1">{label}</p>
       {payload.map((entry, i) => (
-        <p key={i} className="text-xs text-surface-300">
+        <p key={i} className="text-xs text-surface-600">
           <span style={{ color: entry.color }}>●</span> {entry.name}: {entry.value}
         </p>
       ))}
@@ -47,7 +47,7 @@ export const StatsBarChart = ({ data, dataKey = 'value', nameKey = 'name', title
 export const StatsPieChart = ({ data, title }) => {
   return (
     <div className="glass-card">
-      {title && <h3 className="text-lg font-semibold text-white mb-4">{title}</h3>}
+      {title && <h3 className="text-lg font-semibold text-surface-900 mb-4\">{title}</h3>}
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie
@@ -66,7 +66,7 @@ export const StatsPieChart = ({ data, title }) => {
           </Pie>
           <Tooltip content={<CustomTooltip />} />
           <Legend
-            formatter={(value) => <span className="text-sm text-surface-300">{value}</span>}
+            formatter={(value) => <span className="text-sm text-surface-600">{value}</span>}
           />
         </PieChart>
       </ResponsiveContainer>
