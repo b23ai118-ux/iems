@@ -9,12 +9,9 @@ const seedAdmin = async () => {
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Connected to MongoDB');
 
-    // Check if admin already exists
-    const existingAdmin = await User.findOne({ role: 'admin' });
-    if (existingAdmin) {
-      console.log('Admin already exists:', existingAdmin.email);
-      process.exit(0);
-    }
+    // Delete all existing users to start fresh
+    await User.deleteMany({});
+    console.log('Cleared existing users');
 
     // Create default admin
     const admin = await User.create({
